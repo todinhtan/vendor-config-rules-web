@@ -11,6 +11,7 @@ app.set('view engine', 'ejs')
   .use(compression())
   .use(bodyParser.urlencoded({ extended: true }))
   .use('/', routes)
+  .use('/resources', express.static('./views/resources'))
   .listen(config.server.port, (err) => {
     if (err) process.exit(1);
   
